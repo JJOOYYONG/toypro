@@ -1,0 +1,159 @@
+body {
+    font-family: "Noto Sans CJK KR Medium";
+}
+/*헤더 영역*/
+.tem_head {
+    width: 100%;
+    height: 80px;
+    background: rgb(220, 183, 242);
+    background: linear-gradient(166deg, rgba(220, 183, 242, 1) 0%, rgba(117, 169, 221, 1) 46%, rgba(12, 178, 240, 1) 100%);
+}
+
+#head_wrap {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin: 0 1rem;
+    align-items: center;
+    padding: 3vh 6vw;
+}
+/*콘텐츠 영역*/
+.wrap {
+    width: 100%;
+    height: 150vh;
+}
+/*콘텐츠 > 영화 랭킹
+Swiper slide 사용 아래 링크 참고
+https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EA%B5%AC%ED%98%84
+*/
+.slide_wrap {
+    width: 100%;
+    height: 30%;
+    padding: 0 11vw;
+}
+
+#slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slide .img-wrapper {
+    width: 20%;
+    height: 42vh;
+    margin: 0.5vw;
+}
+
+#slide .img-wrapper img {
+    width: 100%;
+}
+
+.swiper-container {
+    border-radius: 5px;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+    align-items: center; /* 위아래 기준 중앙정렬 */
+    justify-content: center; /* 좌우 기준 중앙정렬 */
+}
+
+.swiper-slide img {
+    max-width: 100%;
+}
+
+.rank_wrap {
+    position: relative;
+    bottom: -8rem;
+    left: -14rem;
+    font-size: 61px;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+    text-shadow: -1px 0 #071a2d, 0 1px #071a2d, 1px 0 #071a2d, 0 -1px #071a2d;
+}
+
+#slide .img-wrapper:hover {
+    filter: brightness(70%);
+}
+
+.hover_text {
+    opacity: 0;
+    color: #fff;
+    position: absolute;
+    top: 7rem;
+    left: 4rem;
+    font-size: 4rem;
+    transform: rotate(180deg);
+}
+
+#slide .img-wrapper:hover .hover_text {
+    opacity: 1;
+}
+
+.btn_area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+    top: -63%;
+    margin: 0 -52px;
+}
+
+.btn_area span i {
+    font-size: 60px;
+    color: #75a9dd;
+    cursor: pointer;
+}
+
+.btn_area span i:hover {
+    color: #d9a5f7;
+}
+
+/* 콘텐츠 > 위시 리스트 & 리뷰 리스트 공통*/
+.content_wrap {
+    width: 100%;
+    background-color: #eedd;
+}
+
+.content {
+    width: 86%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.content_head {
+    border-bottom: 3px solid #75a9dd;;
+    margin: 0 0 5px 0;
+}
+
+
+/*콘텐츠 > 위시 리스트*/
+#wish_list {
+    width: 50%;
+    height: 200vh;
+    padding: 1rem 0 0 0;
+}
+
+/*콘텐츠 > 리뷰 리스트*/
+#review_list {
+    width: 50%;
+    height: 200vh;
+    padding: 1rem;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card_date {
+    font-weight: 200;
+    font-size: 14px;
+    color: gray;
+}
+
+#go_review {
+    float: right;
+}
