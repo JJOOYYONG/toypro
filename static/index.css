@@ -87,6 +87,7 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     left: 4rem;
     font-size: 4rem;
     transform: rotate(180deg);
+    cursor: pointer;
 }
 
 #slide .img-wrapper:hover .hover_text {
