@@ -130,6 +130,10 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     border-bottom: 3px solid #75a9dd;;
     margin: 0 0 5px 0;
 }
+.div_box{
+    width: 653px;
+    max-width: 653px
+}
 
 
 /*콘텐츠 > 위시 리스트*/
@@ -158,4 +162,53 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
 
 #go_review {
     float: right;
+}
+
+/*반응형)콘텐츠>위시/리뷰 리시트*/
+
+@media ( max-width: 1394px ) {
+    .content {
+        display: block;
+    }
+
+    #wish_list {
+        width: 100%;
+        height: auto;
+    }
+
+    #review_list {
+        width: 100%;
+        height: auto;
+    }
+
+    .div_box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .rank_wrap {
+        bottom: -4.6rem;
+        left: 0.7rem;
+        font-size: 2rem;
+        z-index: 99;
+    }
+
+    .hover_text {
+        top: 6rem;
+        left: 1rem;
+    }
+
+}
+@media (max-width: 600px){
+    .rank_wrap {
+        bottom: -2.6rem;
+        left: 0.7rem;
+        font-size: 1rem;
+        z-index: 99;
+    }
+    .hover_text {
+        top: 7rem;
+        left: 0rem;
+        font-size: 3rem;
+    }
 }
