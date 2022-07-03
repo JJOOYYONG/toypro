@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>영화기록소(임시)</title>
 
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -29,16 +30,19 @@
 <div class="wrap">
     <!--원용님 영역-->
     <div class="slide_wrap">
-        <!--아래 div 활용해주세요-->
         <div id="slide" class="swiper-container">
             <div class="swiper-wrapper">
+                <!--아래 div 활용해주세요-->
                 <div class="img-wrapper swiper-slide">
                     <img src="https://images.chosun.com/resizer/SstKelKS2u_utVqn78kmbdEABqE=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/5JA2S7B34BSPECT4LSLSFRQZJU.jpg"
                          alt="영화이미지"/>
                     <div class="rank_wrap">
                         <p class="rank">1</p>
+                        <input type="hidden" name="movie_title" value="1"/>
+                        <input type="hidden" name="movie_text" value="2"/>
+                        <input type="hidden" name="movie_date" value="3"/>
                     </div>
-                     <div class="hover_text">
+                     <div class="hover_text" onclick="getData(this);">
                         <i class="fa-solid fa-circle-arrow-up"></i>
                     </div>
                 </div>
@@ -47,8 +51,11 @@
                          alt="영화이미지"/>
                     <div class="rank_wrap">
                         <p class="rank">1</p>
+                        <input type="hidden" name="movie_title" value="1"/>
+                        <input type="hidden" name="movie_text" value="2"/>
+                        <input type="hidden" name="movie_date" value="3"/>
                     </div>
-                     <div class="hover_text">
+                     <div class="hover_text" onclick="getData(this);">
                         <i class="fa-solid fa-circle-arrow-up"></i>
                     </div>
                 </div>
@@ -57,8 +64,11 @@
                          alt="영화이미지"/>
                     <div class="rank_wrap">
                         <p class="rank">1</p>
+                        <input type="hidden" name="movie_title" value="1"/>
+                        <input type="hidden" name="movie_text" value="2"/>
+                        <input type="hidden" name="movie_date" value="3"/>
                     </div>
-                     <div class="hover_text">
+                     <div class="hover_text" onclick="getData(this);">
                         <i class="fa-solid fa-circle-arrow-up"></i>
                     </div>
                 </div>
@@ -67,8 +77,11 @@
                          alt="영화이미지"/>
                     <div class="rank_wrap">
                         <p class="rank">1</p>
+                        <input type="hidden" name="movie_title" value="1"/>
+                        <input type="hidden" name="movie_text" value="2"/>
+                        <input type="hidden" name="movie_date" value="3"/>
                     </div>
-                     <div class="hover_text">
+                     <div class="hover_text" onclick="getData(this);">
                         <i class="fa-solid fa-circle-arrow-up"></i>
                     </div>
                 </div>
@@ -77,8 +90,11 @@
                          alt="영화이미지"/>
                     <div class="rank_wrap">
                         <p class="rank">1</p>
+                        <input type="hidden" name="movie_title" value="1"/>
+                        <input type="hidden" name="movie_text" value="2"/>
+                        <input type="hidden" name="movie_date" value="3"/>
                     </div>
-                     <div class="hover_text">
+                     <div class="hover_text" onclick="getData(this);">
                         <i class="fa-solid fa-circle-arrow-up"></i>
                     </div>
                 </div>
@@ -98,7 +114,7 @@
                     <h1>✨ WISH</h1>
                 </div>
                 <!--아래 div 활용해주세요-->
-                <div class="card mb-3" style="width: 653px; max-width: 653px">
+                <div class="card mb-3 div_box" id="wish_div">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="https://images.chosun.com/resizer/SstKelKS2u_utVqn78kmbdEABqE=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/5JA2S7B34BSPECT4LSLSFRQZJU.jpg"
@@ -111,7 +127,7 @@
                                     가장 압도적인 비행이 시작된다! 최고의 파일럿이자 전설적인 인물 매버릭(톰 크루즈)은 자신이 졸업한 훈련학교 교관으로 발탁된다.
                                 </p>
                                 <p class="card-text"><small class="text-muted">2022.06.25 개봉</small></p>
-                                <button type="button" class="btn btn-success" id="go_review">리뷰쓰기</button>
+                                <button onclick="popup_on()" type="button" class="btn btn-success" id="go_review">리뷰쓰기</button>
                             </div>
                         </div>
                     </div>
@@ -123,7 +139,7 @@
                     <h1>🎈 REVIEW</h1>
                 </div>
                 <!--아래 div 활용해주세요-->
-                <div class="card mb-3 review_box" style="max-width: 653px;max-height: 200px;">
+                <div class="card mb-3 div_box" id="review_div">
                     <div class="row g-0">
                         <div class="col-md-12">
                             <div class="card-body">
@@ -134,7 +150,35 @@
                     </div>
                 </div>
             </div>
+            <!--팝업박스-->
+            <div id="popup_mask"></div>
+            <div id="popup_box">
+                <div id="popup_title">${영화이름}</div>
+                <div id="popup_date">
+                    <input type="date">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="popup_star">별점</label>
+                    <select class="form-select" id="popup_star">
+                        <option selected>-- 선택하기 --</option>
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                    </select>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="popup_comment"></textarea>
+                    <label for="popup_comment">리뷰작성</label>
+                </div>
+                <div class="popup_btn">
+                    <button onclick="popup_posting()" type="button" class="btn btn-dark">작성완료</button>
+                    <button onclick="popup_close()" type="button" class="btn btn-outline-dark">닫기</button>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
 </body>

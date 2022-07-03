@@ -87,6 +87,7 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     left: 4rem;
     font-size: 4rem;
     transform: rotate(180deg);
+    cursor: pointer;
 }
 
 #slide .img-wrapper:hover .hover_text {
@@ -129,6 +130,10 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     border-bottom: 3px solid #75a9dd;;
     margin: 0 0 5px 0;
 }
+.div_box{
+    width: 653px;
+    max-width: 653px
+}
 
 
 /*콘텐츠 > 위시 리스트*/
@@ -158,3 +163,91 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
 #go_review {
     float: right;
 }
+
+/*반응형)콘텐츠>위시/리뷰 리시트*/
+
+@media ( max-width: 1394px ) {
+    .content {
+        display: block;
+    }
+
+    #wish_list {
+        width: 100%;
+        height: auto;
+    }
+
+    #review_list {
+        width: 100%;
+        height: auto;
+    }
+
+    .div_box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .rank_wrap {
+        bottom: -4.6rem;
+        left: 0.7rem;
+        font-size: 2rem;
+        z-index: 99;
+    }
+
+    .hover_text {
+        top: 6rem;
+        left: 1rem;
+    }
+
+}
+@media (max-width: 600px){
+    .rank_wrap {
+        bottom: -2.6rem;
+        left: 0.7rem;
+        font-size: 1rem;
+        z-index: 99;
+    }
+    .hover_text {
+        top: 7rem;
+        left: 0rem;
+        font-size: 3rem;
+    }
+}
+
+/*팝업 박스*/
+#popup_box {
+    background-color: white;
+
+    width: 40%; /*가로길이 설정은 여기서*/
+    margin-left: -20%; /*width의 반만큼 음수로*/
+    height: 500px; /*세로길이 설정은 여기서*/
+    margin-top: -250px; /*height의 반만큼 음수로*/
+    left: 50%;
+    top: 50%;
+
+    padding: 20px;
+    box-shadow: 0px 0px 3px 0px gray;
+
+    display: none;
+    position: fixed;
+    z-index: 99;
+}
+
+#popup_comment {
+    height: 300px;
+}
+
+#popup_mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    zoom: 1;
+    opacity: 0.5;
+    z-index: 98;
+    display: none;
+}
+/*팝업 박스*/
