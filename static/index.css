@@ -10,12 +10,19 @@ body {
 }
 
 #head_wrap {
+        width: 89%;
     display: flex;
     justify-content: space-between;
     justify-items: center;
     margin: 0 1rem;
     align-items: center;
-    padding: 3vh 6vw;
+    position: absolute;
+    top: -2.5rem;
+    left: 5rem;
+    float: left;
+}
+#head_wrap img{
+    width: 11%;
 }
 /*콘텐츠 영역*/
 .wrap {
@@ -26,6 +33,7 @@ body {
 Swiper slide 사용 아래 링크 참고
 https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EA%B5%AC%ED%98%84
 */
+
 .slide_wrap {
     width: 100%;
     height: 30%;
@@ -58,6 +66,7 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     display: flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
     align-items: center; /* 위아래 기준 중앙정렬 */
     justify-content: center; /* 좌우 기준 중앙정렬 */
+    width: 95%;
 }
 
 .swiper-slide img {
