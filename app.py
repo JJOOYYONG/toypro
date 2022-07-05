@@ -5,7 +5,7 @@ from pymongo import MongoClient
 import certifi
 
 ca = certifi.where()
-client = MongoClient('mongodb+srv://sparta:sparta@cluster0.vygyl.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
+client = MongoClient('mongodb+srv://test:sparta@cluster0.9qdtqor.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
 db = client.dbsparta
 
 import requests
@@ -30,7 +30,7 @@ def RankList():
     for movie in movies:
         title = movie.select_one('div > div.thumb_cont > strong > a').text
         date = movie.select_one('div > div.thumb_cont > span > span:nth-child(1) > span').text
-        text = movie.select_one('div > div.thumb_item > div.poster_info > a').text[:140].strip()
+        text = movie.select_one('div > div.thumb_item > div.poster_info > a').text[:150].strip()
         rank = movie.select_one('div > div.thumb_item > div.poster_movie > span.rank_num').text
         tag = movie.select_one('div.thumb_item > div.poster_movie > img')
 
@@ -42,6 +42,29 @@ def RankList():
         array.append({'title': title, 'date': date, 'text': text, 'img': img, 'rank': rank})
 
     return jsonify({'result': 'success', 'list': array})
+
+
+@app.route("/getList", methods=["POST"])
+def list_post():
+    title_receive = request.form['title_give']
+    text_receive = request.form['text_give']
+    date_receive = request.form['date_give']
+
+    doc = {
+        'title': title_receive,
+        'text': text_receive,
+        'date': date_receive
+    }
+    db.getList.insert_one(doc)
+
+    return jsonify({'msg': '이동 완료'})
+
+@app.route("/getList", methods=["GET"])
+def list_get():
+    movie_list = list(db.getList.find({},{'_id':False}))
+    return jsonify({'movies':movie_list})
+
+
 
 if __name__=='__main__':
     app.run('0.0.0.0',post=5000,debug=True)
