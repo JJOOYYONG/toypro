@@ -12,7 +12,7 @@
             data:{"url" : url},
             success:function (response){
                 console.log(response);
-                $('#slide').empty()
+                $('.swiper-wrapper').empty()
                 let rows = response['list']
                 for (let i = 0; i < rows.length; i++) {
                     let img = rows[i]['img'];
@@ -33,7 +33,7 @@
                                       <i class="fa-solid fa-circle-arrow-up"></i>
                                       </div>
                                     </div>`
-                $('#slide>.swiper-wrapper').append(temp_html)
+                    $('.swiper-wrapper').append(temp_html)
                 }
             }
         });
