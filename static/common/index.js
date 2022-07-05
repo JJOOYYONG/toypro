@@ -1,7 +1,6 @@
 /*프로젝트 공통으로 사용되는 js*/
 $(document).ready(function (){
 	slide();
-	getRankList();
 })
 
 //영화 이미지 슬라이드
