@@ -41,42 +41,26 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     margin: 8px 0 0 0;
 }
 
-#slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-#slide .img-wrapper {
-    width: 20%;
-    height: 42vh;
-    margin: 0.5vw;
+#slide.slick-slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  transition: all 0.4s ease-in-out;
+  height: 200px;
 }
-
-#slide .img-wrapper img {
-    width: 100%;
+.slide_div{
+    margin: 0 0.5rem;
 }
-
-.swiper-container {
-    border-radius: 5px;
-}
-
-.swiper-slide {
-    text-align: center;
-    display: flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
-    align-items: center; /* 위아래 기준 중앙정렬 */
-    justify-content: center; /* 좌우 기준 중앙정렬 */
-    width: 95%;
-}
-
-.swiper-slide img {
-    max-width: 100%;
+.slick-slide img{
+    max-width: 98.9%;
 }
 
 .rank_wrap {
     position: relative;
-    bottom: -8rem;
-    left: -14rem;
+    bottom: 6rem;
+    left: 0.4rem;
     font-size: 61px;
     font-weight: 700;
     color: #fff;
@@ -84,7 +68,11 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     text-shadow: -1px 0 #071a2d, 0 1px #071a2d, 1px 0 #071a2d, 0 -1px #071a2d;
 }
 
-#slide .img-wrapper:hover {
+.rank_wrap>span{
+    font-size: 20px;
+}
+
+#slide .slide_div:hover {
     filter: brightness(70%);
 }
 
@@ -99,7 +87,7 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     cursor: pointer;
 }
 
-#slide .img-wrapper:hover .hover_text {
+#slide .slide_div:hover .hover_text {
     opacity: 1;
 }
 
@@ -109,7 +97,7 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     flex-wrap: nowrap;
     justify-content: space-between;
     position: relative;
-    top: -63%;
+    bottom: 30rem;
     margin: 0 -52px;
 }
 
@@ -131,7 +119,7 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
 
 .content {
     width: 86%;
-    margin: 0 auto;
+    margin: 1.5rem auto;
     display: flex;
 }
 
@@ -196,28 +184,28 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     }
 
     .rank_wrap {
-        bottom: -4.6rem;
+        bottom: 2.4rem;
         left: 0.7rem;
         font-size: 2rem;
         z-index: 99;
     }
 
     .hover_text {
-        top: 6rem;
-        left: 1rem;
+        top: 4rem;
+        left: 2.3rem;
     }
 
 }
 @media (max-width: 600px){
     .rank_wrap {
-        bottom: -2.6rem;
-        left: 0.7rem;
+        bottom: -1.4rem;
+        left: 0.1rem;
         font-size: 1rem;
         z-index: 99;
     }
     .hover_text {
-        top: 7rem;
-        left: 0rem;
+        top: 2rem;
+        left: 1rem;
         font-size: 3rem;
     }
 }

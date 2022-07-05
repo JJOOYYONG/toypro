@@ -28,15 +28,18 @@ def RankList():
     array = []
 
     for movie in movies:
+        title = movie.select_one('div > div.thumb_cont > strong > a').text
+        date = movie.select_one('div > div.thumb_cont > span > span:nth-child(1) > span').text
+        text = movie.select_one('div > div.thumb_item > div.poster_info > a').text[:140].strip()
+        rank = movie.select_one('div > div.thumb_item > div.poster_movie > span.rank_num').text
         tag = movie.select_one('div.thumb_item > div.poster_movie > img')
-        if tag is not None:
-            title = movie.select_one('div > div.thumb_cont > strong > a').text
-            date = movie.select_one('div > div.thumb_cont > span > span:nth-child(1) > span').text
-            text = movie.select_one('div > div.thumb_item > div.poster_info > a').text[:140].strip()
-            img = tag["src"]
-            rank = movie.select_one('div > div.thumb_item > div.poster_movie > span.rank_num').text
 
-            array.append({'title': title, 'date': date, 'text': text, 'img': img, 'rank': rank})
+        if tag is not None:
+            img = tag["src"]
+        else:
+            img = "NONE"
+
+        array.append({'title': title, 'date': date, 'text': text, 'img': img, 'rank': rank})
 
     return jsonify({'result': 'success', 'list': array})
 

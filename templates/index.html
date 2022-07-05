@@ -13,9 +13,11 @@
         crossorigin="anonymous"></script>
 
     <link href="../static/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -30,78 +32,9 @@
 <div class="wrap">
     <!--원용님 영역-->
     <div class="slide_wrap">
-        <div id="slide" class="swiper-container">
-            <div class="swiper-wrapper">
-                <!--아래 div 활용해주세요-->
-                <div class="img-wrapper swiper-slide">
-                    <img src="https://images.chosun.com/resizer/SstKelKS2u_utVqn78kmbdEABqE=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/5JA2S7B34BSPECT4LSLSFRQZJU.jpg"
-                         alt="영화이미지"/>
-                    <div class="rank_wrap">
-                        <p class="rank">1</p>
-                        <input type="hidden" name="movie_title" value="1"/>
-                        <input type="hidden" name="movie_text" value="2"/>
-                        <input type="hidden" name="movie_date" value="3"/>
-                    </div>
-                     <div class="hover_text" onclick="getData(this);">
-                        <i class="fa-solid fa-circle-arrow-up"></i>
-                    </div>
-                </div>
-                <div class="img-wrapper swiper-slide">
-                    <img src="https://images.chosun.com/resizer/SstKelKS2u_utVqn78kmbdEABqE=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/5JA2S7B34BSPECT4LSLSFRQZJU.jpg"
-                         alt="영화이미지"/>
-                    <div class="rank_wrap">
-                        <p class="rank">1</p>
-                        <input type="hidden" name="movie_title" value="1"/>
-                        <input type="hidden" name="movie_text" value="2"/>
-                        <input type="hidden" name="movie_date" value="3"/>
-                    </div>
-                     <div class="hover_text" onclick="getData(this);">
-                        <i class="fa-solid fa-circle-arrow-up"></i>
-                    </div>
-                </div>
-                <div class="img-wrapper swiper-slide">
-                    <img src="https://images.chosun.com/resizer/SstKelKS2u_utVqn78kmbdEABqE=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/5JA2S7B34BSPECT4LSLSFRQZJU.jpg"
-                         alt="영화이미지"/>
-                    <div class="rank_wrap">
-                        <p class="rank">1</p>
-                        <input type="hidden" name="movie_title" value="1"/>
-                        <input type="hidden" name="movie_text" value="2"/>
-                        <input type="hidden" name="movie_date" value="3"/>
-                    </div>
-                     <div class="hover_text" onclick="getData(this);">
-                        <i class="fa-solid fa-circle-arrow-up"></i>
-                    </div>
-                </div>
-                <div class="img-wrapper swiper-slide">
-                    <img src="https://images.chosun.com/resizer/SstKelKS2u_utVqn78kmbdEABqE=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/5JA2S7B34BSPECT4LSLSFRQZJU.jpg"
-                         alt="영화이미지"/>
-                    <div class="rank_wrap">
-                        <p class="rank">1</p>
-                        <input type="hidden" name="movie_title" value="1"/>
-                        <input type="hidden" name="movie_text" value="2"/>
-                        <input type="hidden" name="movie_date" value="3"/>
-                    </div>
-                     <div class="hover_text" onclick="getData(this);">
-                        <i class="fa-solid fa-circle-arrow-up"></i>
-                    </div>
-                </div>
-                <div class="img-wrapper swiper-slide">
-                    <img src="https://images.chosun.com/resizer/SstKelKS2u_utVqn78kmbdEABqE=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/5JA2S7B34BSPECT4LSLSFRQZJU.jpg"
-                         alt="영화이미지"/>
-                    <div class="rank_wrap">
-                        <p class="rank">1</p>
-                        <input type="hidden" name="movie_title" value="1"/>
-                        <input type="hidden" name="movie_text" value="2"/>
-                        <input type="hidden" name="movie_date" value="3"/>
-                    </div>
-                     <div class="hover_text" onclick="getData(this);">
-                        <i class="fa-solid fa-circle-arrow-up"></i>
-                    </div>
-                </div>
-            </div>
+        <div id="slide">
         </div>
-        <!--슬라이드 버튼 영역-->
-        <div class="btn_area">
+         <div class="btn_area">
             <span id="prev" class="prev btn"><i class="fa-solid fa-angle-left"></i></span>
             <span id="next" class="next btn"><i class="fa-solid fa-angle-right"></i></span>
         </div>
@@ -182,7 +115,6 @@
     </div>
 </div>
 </body>
-<script src="../static/common/index.js"></script>
 <script src="../static/youngjin.js"></script>
 <script src="../static/hemi.js."></script>
 <script src="../static/wonyong.js"></script>
