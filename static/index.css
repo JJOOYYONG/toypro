@@ -69,7 +69,9 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
 }
 
 .rank_wrap>span{
-    font-size: 20px;
+    font-size: 14px;
+    position: absolute;
+    top: -5rem;
 }
 
 #slide .slide_div:hover {
@@ -97,7 +99,7 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     flex-wrap: nowrap;
     justify-content: space-between;
     position: relative;
-    bottom: 30rem;
+    bottom: 19rem;
     margin: 0 -52px;
 }
 

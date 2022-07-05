@@ -24,7 +24,7 @@ function getRankList() {
                 //이미지 없는 영화는 png 이미지로 대체
                 if(img =="NONE"){
                     temp_html = `<div class="slide_div">
-                                      <img src="../static/img/no_img.png"alt="${title}" style="height: 300px;"/>
+                                      <img src="../static/img/no_img.png"alt="${title}" style="height: 316px;"/>
                                       <div class="rank_wrap">
                                       <p class="rank">${rank}</p>
                                       <span class="non_img_title">${title}</span>
