@@ -82,11 +82,12 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     opacity: 0;
     color: #fff;
     position: absolute;
-    top: 7rem;
-    left: 4rem;
+    top: 6rem;
+    left: 3rem;
     font-size: 4rem;
     transform: rotate(180deg);
     cursor: pointer;
+    padding: 2rem;
 }
 
 #slide .slide_div:hover .hover_text {
@@ -130,7 +131,7 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     margin: 0 0 5px 0;
 }
 .div_box{
-    width: 653px;
+    width: 100%;
     max-width: 653px
 }
 
@@ -161,6 +162,8 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
 
 #go_review {
     float: right;
+    position: relative;
+    bottom: 1rem;
 }
 
 /*반응형)콘텐츠>위시/리뷰 리시트*/

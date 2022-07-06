@@ -18,6 +18,7 @@ headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/
 def home():
    return render_template('index.html')
 
+#웹크롤링_원용
 @app.route('/getRankList', methods=['POST'])
 def RankList():
     url_receive = request.form["url"]
@@ -43,22 +44,24 @@ def RankList():
 
     return jsonify({'result': 'success', 'list': array})
 
-
+# 위시리스트 저장_혜미
 @app.route("/getList", methods=["POST"])
 def list_post():
     title_receive = request.form['title_give']
     text_receive = request.form['text_give']
     date_receive = request.form['date_give']
+    img_receive = request.form['img_give']
 
     doc = {
         'title': title_receive,
         'text': text_receive,
-        'date': date_receive
+        'date': date_receive,
+        'img': img_receive
     }
     db.getList.insert_one(doc)
 
     return jsonify({'msg': '이동 완료'})
-
+# 위시리스트 호출 _ 혜미
 @app.route("/getList", methods=["GET"])
 def list_get():
     movie_list = list(db.getList.find({},{'_id':False}))

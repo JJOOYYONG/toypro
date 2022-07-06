@@ -59,6 +59,7 @@ function getRankList() {
 function slide() {
     $('#slide').slick({
         slidesToShow: 5,
+        slidesToScroll: 5,
         initialSlide:0,
         focusOnSelect: true,
         dots: false,
