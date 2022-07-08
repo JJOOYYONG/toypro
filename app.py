@@ -5,7 +5,7 @@ from pymongo import MongoClient
 import certifi
 
 ca = certifi.where()
-client = MongoClient('mongodb+srv://test:sparta@cluster0.9qdtqor.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
+client = MongoClient('mongodb+srv://test:sparta@cluster0.bglkk.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
 db = client.dbsparta
 
 import requests
@@ -61,13 +61,36 @@ def list_post():
     db.getList.insert_one(doc)
 
     return jsonify({'msg': '이동 완료'})
+
 # 위시리스트 호출 _ 혜미
 @app.route("/getList", methods=["GET"])
 def list_get():
     movie_list = list(db.getList.find({},{'_id':False}))
     return jsonify({'movies':movie_list})
 
+# 리뷰리스트 저장_영진
+@app.route('/reviews', methods=['POST'])
+def review_post():
+   name_receive = request.form['name_give']
+   date_receive = request.form['date_give']
+   star_receive = request.form['star_give']
+   comment_receive = request.form['comment_give']
 
+   doc = {
+      'name': name_receive,
+      'date': date_receive,
+      'star': star_receive,
+      'comment': comment_receive
+   }
+   db.reviews.insert_one(doc)
+
+   return jsonify({'msg': '작성 완료!'})
+
+# 리뷰리스트 호출_영진
+@app.route('/reviews', methods=['GET'])
+def review_get():
+   review_list = list(db.reviews.find({}, {'_id': False}))
+   return jsonify({'reviews': review_list})
 
 if __name__=='__main__':
     app.run('0.0.0.0',post=5000,debug=True)

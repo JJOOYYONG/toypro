@@ -53,44 +53,17 @@
                 </div>
                 <div class="div_box" id="review_div">
                     <!--최종적으로 이런식으로 붙으면 됩니당!-->
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-12">
-                                <div class="card-body">
-                                    <h5 class="card-title">매버릭 후기 <span class="card_date">2022.06.25</span></h5>
-                                    <p class="card-text">매버릭 재밌다.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-12">
-                                <div class="card-body">
-                                    <h5 class="card-title">매버릭 후기 <span class="card_date">2022.06.25</span></h5>
-                                    <p class="card-text">매버릭 재밌다.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-12">
-                                <div class="card-body">
-                                    <h5 class="card-title">매버릭 후기 <span class="card_date">2022.06.25</span></h5>
-                                    <p class="card-text">매버릭 재밌다.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!--팝업박스-->
             <div id="popup_mask"></div>
             <div id="popup_box">
-                <div id="popup_title">${영화이름}</div>
+                <div id="popup_title"></div>
                 <div id="popup_date">
-                    <input type="date">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="date_select">본 날짜</label>
+                        <input class="form-control" type="date" id="date_select">
+                    </div>
                 </div>
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="popup_star">별점</label>
@@ -118,7 +91,7 @@
 </div>
 </body>
 <script src="../static/youngjin.js"></script>
-<script src="../static/hemi.js."></script>
+<script src="../static/hemi.js"></script>
 <script src="../static/wonyong.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </html>
