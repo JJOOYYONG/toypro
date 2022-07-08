@@ -221,8 +221,8 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
 
     width: 40%; /*가로길이 설정은 여기서*/
     margin-left: -20%; /*width의 반만큼 음수로*/
-    height: 500px; /*세로길이 설정은 여기서*/
-    margin-top: -250px; /*height의 반만큼 음수로*/
+    height: 540px; /*세로길이 설정은 여기서*/
+    margin-top: -270px; /*height의 반만큼 음수로*/
     left: 50%;
     top: 50%;
 
@@ -232,6 +232,10 @@ https://velog.io/@function_dh/JavaScript-Swiper-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%
     display: none;
     position: fixed;
     z-index: 99;
+}
+
+#popup_box > #popup_date, .popup_btn {
+    margin-top: 15px;
 }
 
 #popup_comment {
